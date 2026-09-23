@@ -10,6 +10,8 @@ Utilisez de préférence des PNG transparents, sans marge autour du fanion, avec
 
 Faites défiler pour dessiner la corde et révéler les fanions. Cliquez sur un fanion pour l’agrandir ; naviguez avec la molette (vers le bas : suivant, vers le haut : précédent), les flèches, les touches du clavier ou un glissement horizontal. La molette avance d’un fanion à la fois et attend la fin de la transition. Échap ferme le zoom.
 
+Les fanions s’effacent un par un dans l’ordre de la corde, selon la même progression que leur apparition, avec une légère rotation et une réduction. Ils réapparaissent en remontant ; leur balancement est suspendu lorsqu’ils sont masqués. Le compteur conserve la progression le long de la guirlande. Cette disparition est désactivée si la préférence système de réduction des animations est active.
+
 Le serveur est accessible uniquement sur cet ordinateur. Fermez sa fenêtre pour l’arrêter.
 L’ouverture directe de `index.html` utilise la liste enregistrée lors du dernier lancement du serveur. Pour détecter de nouvelles images, utilisez le lanceur.
 Les polices Google nécessitent Internet ; des polices de remplacement sont utilisées hors connexion.

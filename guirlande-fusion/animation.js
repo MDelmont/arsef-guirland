@@ -148,9 +148,10 @@ class Component extends Renderer {
     var vh = window.innerHeight || 800;
     var yv = (vh * 0.72 - r.top) / Math.max(1, r.height) * g.H;
     var drawn = this._lenAt(g, yv);
+    var erased = this._lenAt(g, (vh * 0.12 - r.top) / Math.max(1, r.height) * g.H);
     var narrow = el.clientWidth > 0 && el.clientWidth < 640;
     var st = this.state || {};
-    if (Math.abs(drawn - (st.drawn || 0)) > 0.5 || narrow !== !!st.narrow) this.setState({ drawn: drawn, narrow: narrow });
+    if (Math.abs(drawn - (st.drawn || 0)) > 0.5 || Math.abs(erased - (st.erased || 0)) > 0.5 || narrow !== !!st.narrow) this.setState({ drawn: drawn, narrow: narrow, erased: erased });
   }
   _lenAt(g, yv) {
     var p = g.pts;
@@ -247,6 +248,9 @@ class Component extends Renderer {
     var fanions = g.items.map(function (it, i) {
       var on = drawn >= it.s;
       if (on) shown++;
+      // Garder le compteur de progression, mais retirer les fanions déjà dépassés.
+      // Même progression le long de la corde que l'apparition : un fanion après l'autre.
+      on = on && (showAll || it.s >= (st.erased || 0));
       var src = SCANS[i] || '';
       var dots = i % 3 === 2;
       return {

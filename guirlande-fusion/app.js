@@ -60,8 +60,9 @@ class Renderer {
       else {stage.style.height=v.Hpx; if(!this.state.closing) stage.style.transform=v.stageTf;}
       const path=stage.querySelector('.corde'); path.setAttribute('stroke-dasharray',id==='scene'?v.sceneDash:v.total);path.setAttribute('stroke-dashoffset',id==='scene'?v.sceneOff:v.offset);
       stage.querySelectorAll('button').forEach((b,i)=>{
-        const f=v.fanions[i]; Object.assign(b.style,{left:f.left,top:f.top,width:f.width,opacity:id==='scene'?f.zOp:f.op,transform:id==='scene'?f.tfOn:f.tf});
+        const f=v.fanions[i]; Object.assign(b.style,{left:f.left,top:f.top,width:f.width,opacity:id==='scene'?f.zOp:f.op,transform:id==='scene'&&!this.state.closing?f.tfOn:f.tf});
         b.disabled=id==='guirlande'&&!f.op; b.firstChild.className=f.swingClass;b.firstChild.style.animationDelay=f.delay;
+        b.firstChild.style.animationPlayState=(id==='guirlande'?!f.op:!v.zOpen)?'paused':'running';
       });
     }
     $('number').textContent='Fanion n°'+v.zNum; $('position').textContent='/ '+v.n;
