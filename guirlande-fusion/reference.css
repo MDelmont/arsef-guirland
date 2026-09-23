@@ -1,0 +1,23 @@
+
+body{margin:0;background:#F7F3EC;color:#2A2522;font-family:"Bricolage Grotesque",system-ui,sans-serif}
+a{color:#2A2522;text-decoration:none}a:hover{color:#C2185B}
+.fanion{position:absolute;aspect-ratio:0.86;transform-origin:50% 0;filter:drop-shadow(0 6px 5px rgba(70,45,20,.20));transition:opacity .5s ease,transform .8s cubic-bezier(.2,1.5,.4,1)}
+.swing{position:absolute;inset:0;transform-origin:50% 0}
+.swing.on{animation:swing 3.4s ease-in-out infinite alternate}
+@keyframes swing{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
+.tissu{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 100%)}
+.scan{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:50% 0;mix-blend-mode:multiply}
+.perle{position:absolute;top:-6%;width:11%;aspect-ratio:1;border-radius:50%;background:#8A5A2B;box-shadow:inset -1px -1px 0 rgba(0,0,0,.25),inset 1px 1px 0 rgba(255,255,255,.35)}
+.corde{transition:stroke-dashoffset .35s ease-out}
+@keyframes bob{from{transform:translateY(0)}to{transform:translateY(6px)}}
+.cue{animation:bob 1.2s ease-in-out infinite alternate}
+button.fanion{background:none;border:0;padding:0;margin:0;cursor:zoom-in;font:inherit}
+button.fanion:hover .swing{filter:brightness(1.06)}
+button.fanion:focus-visible{outline:3px solid #C2185B;outline-offset:6px;border-radius:4px}
+.scene .fanion{transition:opacity .6s ease;cursor:pointer}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.zoom{animation:fadein .35s ease-out}
+.nav{width:56px;height:56px;border-radius:50%;border:0;background:#FFFFFF;color:#2A2522;box-shadow:0 6px 20px rgba(60,40,20,.18);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .15s ease,opacity .2s}
+.nav:hover{transform:scale(1.08)}
+.nav:disabled{opacity:.3;cursor:default;transform:none}
+.nav:focus-visible{outline:3px solid #C2185B;outline-offset:3px}

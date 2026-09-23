@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Art et Ficelles — La guirlande</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reference.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="fanions.js"></script>
+  <script defer src="app.js"></script>
+  <script defer src="animation.js"></script>
+</head>
+<body>
+<div id="page">
+  <header><a class="brand" href="#haut">ART ET FICELLES</a><nav><a href="#haut">Accueil</a><a href="#guirlande">La guirlande</a></nav></header>
+  <section id="haut"><div class="handwritten">Des créations, un lien entre nous</div><h1>La guirlande</h1><p><span id="total">12</span> fanions faits main, accrochés dans l’ordre. Faites défiler pour dérouler la guirlande, fanion après fanion.</p><svg class="cue" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5E554D" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></section>
+  <main id="guirlande" aria-label="La guirlande de fanions"></main>
+  <footer id="fin"><div>Fin de la guirlande</div><p>Merci à toutes les petites mains !</p></footer>
+  <div class="counter" aria-live="polite"><span id="shown">0</span> / <span id="count">12</span> fanions</div>
+</div>
+<dialog id="zoom" class="zoom" aria-label="Fanion agrandi"><div id="scene" class="scene"></div><div class="zoom-ui"><div class="zoom-head"><div class="badge"><span id="number"></span><small id="position"></small></div><button class="nav" id="close" aria-label="Fermer">✕</button></div><button class="nav previous" id="prev" aria-label="Fanion précédent">❮</button><button class="nav next" id="next" aria-label="Fanion suivant">❯</button></div></dialog>
+<noscript>Activez JavaScript pour découvrir la guirlande.</noscript>
+</body>
+</html>
