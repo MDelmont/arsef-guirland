@@ -23,6 +23,10 @@ class Component extends Renderer {
   _vp() { return { w: window.innerWidth || 1200, h: window.innerHeight || 800 }; }
   _zFor(it) {
     var v = this._vp(), ph = it.pw / 0.86;
+    if (v.w <= 640) {
+      // Garder une marge pour le balancement et les commandes en haut et en bas.
+      return Math.min(v.h * 0.65 / ph, v.w * 0.8 / it.pw, 6);
+    }
     return Math.min(v.h * 0.58 / ph, (v.w - 160) * 0.62 / it.pw, 6);
   }
   _pointAt(s) {
